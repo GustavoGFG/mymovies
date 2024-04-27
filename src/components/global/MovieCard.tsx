@@ -50,16 +50,16 @@ export const MovieCard = ({ movie }: Props) => {
           />
         </div>
       )}
-      <div className="rounded-[20px] overflow-hidden w-[160px] h-[240px] md:w-[320px] md:h-[480px] relative">
+      <div className="rounded-[10px] overflow-hidden w-[160px] h-[240px] md:w-[320px] md:h-[480px] relative">
         <Image
           src={movie.imageLink}
           layout="fill"
-          objectFit="contain"
+          objectFit="fill"
           alt={movie.name + ' poster'}
         />
       </div>
       <Button
-        className="w-full flex gap-2 text-project-primary font-semibold rounded-xl shadow-lg hover:bg-project-primary hover:text-white"
+        className="w-full flex gap-2 text-project-primary font-semibold rounded-[10px] shadow-lg hover:bg-project-primary hover:text-white"
         onClick={() => handleRemoveButton(movie.name, movie.year)}
       >
         <Trash2 size={18} />
