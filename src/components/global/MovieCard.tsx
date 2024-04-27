@@ -42,7 +42,7 @@ export const MovieCard = ({ movie }: Props) => {
             src={
               streaming.find(stream => {
                 return stream.name == movie.whereToWatch;
-              })?.logo
+              })?.logo || ''
             }
             alt={movie.name}
             width={85}
