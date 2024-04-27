@@ -79,6 +79,7 @@ const Page = () => {
           />
 
           <Input
+            type="password"
             placeholder="Senha"
             className="text-white bg-project-primary"
             value={password}
@@ -89,6 +90,7 @@ const Page = () => {
 
           {form == 'signup' && (
             <Input
+              type="password"
               placeholder="Confirmar senha"
               className="text-white bg-project-primary"
               value={confirmPassword}
