@@ -9,6 +9,9 @@ import { Footer } from '@/components/global/Footer';
 import React from 'react';
 import { MoviesContext } from '@/contexts/MoviesContext';
 import { Toaster } from '@/components/ui/sonner';
+import { toast } from 'sonner';
+import { toastTheme } from '@/data/toastThemes';
+import { navigate } from '@/utils/serverUtils';
 
 const Page = () => {
   const [movies, setMovies] = useState<ApiMovie[] | []>([]);
@@ -18,7 +21,13 @@ const Page = () => {
       const fetchedMovies = await getAll();
       setMovies(fetchedMovies);
     } catch (error) {
-      console.error('Error fetching movies:', error);
+      toast.error('Erro ao buscar filmes', toastTheme.error);
+      setTimeout(() => {
+        toast.warning('Redirecionando para página de login');
+      }, 2000);
+      setTimeout(() => {
+        navigate('/');
+      }, 3000);
     }
   };
 

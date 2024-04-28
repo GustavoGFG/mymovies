@@ -8,7 +8,7 @@ import { toastTheme } from '@/data/toastThemes';
 import { navigate } from '@/utils/serverUtils';
 import { emailRegex } from '@/utils/utils';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
 const Page = () => {
@@ -36,6 +36,12 @@ const Page = () => {
       }
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem('movienight') !== null) {
+      navigate('/movies');
+    }
+  }, []);
 
   return (
     <div className="h-[100dvh] flex justify-between overflow-hidden">
